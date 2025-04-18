@@ -1,53 +1,48 @@
-(define (problem LIBERO_Floor_Manipulation)
+(define (problem LIBERO_Living_Room_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language Pick the tomato sauce and place it in the basket)
+  (:language pick up the tomato sauce and place it in the basket)
     (:regions
-      (bin_region
-          (:target floor)
+      (basket_init_region
+          (:target living_room_table)
           (:ranges (
               (-0.01 0.25 0.01 0.27)
             )
           )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
       )
-      (target_object_region
-          (:target floor)
+      (bouba_init_region
+          (:target living_room_table)
           (:ranges (
               (0.025 -0.125 0.07500000000000001 -0.07500000000000001)
             )
           )
-      )
-      (other_object_region_0
-          (:target floor)
-          (:ranges (
-              (-0.145 -0.265 -0.095 -0.215)
+          (:yaw_rotation (
+              (0.0 0.0)
             )
           )
       )
-      (other_object_region_1
-          (:target floor)
+      (kiki_init_region
+          (:target living_room_table)
           (:ranges (
               (-0.175 0.034999999999999996 -0.125 0.08499999999999999)
             )
           )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
       )
-      (other_object_region_2
-          (:target floor)
+      (tomato_sauce_init_region
+          (:target living_room_table)
           (:ranges (
               (0.07500000000000001 -0.225 0.125 -0.17500000000000002)
             )
           )
-      )
-      (other_object_region_3
-          (:target floor)
-          (:ranges (
-              (0.125 0.0049999999999999975 0.175 0.055)
-            )
-          )
-      )
-      (other_object_region_4
-          (:target floor)
-          (:ranges (
-              (-0.225 -0.10500000000000001 -0.17500000000000002 -0.055)
+          (:yaw_rotation (
+              (0.0 0.0)
             )
           )
       )
@@ -57,32 +52,27 @@
     )
 
   (:fixtures
-    floor - floor
+    living_room_table - living_room_table
   )
 
   (:objects
-    tomato_sauce_1 - tomato_sauce
+    kiki_1 - kiki
+    bouba_1 - bouba
     basket_1 - basket
-    milk_1 - milk
-    butter_1 - butter
-    orange_juice_1 - orange_juice
-    chocolate_pudding_1 - chocolate_pudding
-    bbq_sauce_1 - bbq_sauce
+    tomato_sauce_1 - tomato_sauce
   )
 
   (:obj_of_interest
+    kiki_1
+    bouba_1
     tomato_sauce_1
-    basket_1
   )
 
   (:init
-    (On tomato_sauce_1 floor_target_object_region)
-    (On milk_1 floor_other_object_region_0)
-    (On butter_1 floor_other_object_region_1)
-    (On orange_juice_1 floor_other_object_region_2)
-    (On chocolate_pudding_1 floor_other_object_region_3)
-    (On bbq_sauce_1 floor_other_object_region_4)
-    (On basket_1 floor_bin_region)
+    (On bouba_1 living_room_table_bouba_init_region)
+    (On kiki_1 living_room_table_kiki_init_region)
+    (On basket_1 living_room_table_basket_init_region)
+    (On tomato_sauce_1 living_room_table_tomato_sauce_init_region)
   )
 
   (:goal

@@ -59,6 +59,7 @@ libero_suites = [
     "libero_goal",
     "libero_90",
     "libero_10",
+    # "sound_symbolism"
 ]
 task_maps = {}
 max_len = 0
@@ -114,11 +115,15 @@ class Benchmark(abc.ABC):
 
     def _make_benchmark(self):
         tasks = list(task_maps[self.name].values())
+        print(tasks)
         if self.name == "libero_90":
             self.tasks = tasks
+        elif self.name == "libero_object":
+                self.tasks = tasks
         else:
             print(f"[info] using task orders {task_orders[self.task_order_index]}")
             self.tasks = [tasks[i] for i in task_orders[self.task_order_index]]
+        print(self.tasks)
         self.n_tasks = len(self.tasks)
 
     def get_num_tasks(self):
@@ -216,4 +221,11 @@ class LIBERO_100(Benchmark):
     def __init__(self, task_order_index=0):
         super().__init__(task_order_index=task_order_index)
         self.name = "libero_100"
+        self._make_benchmark()
+
+@register_benchmark
+class Sound_Symbolism(Benchmark):
+    def __init__(self, task_order_index=0):
+        super().__init__(task_order_index=task_order_index)
+        self.name = "sound_symbolism"
         self._make_benchmark()

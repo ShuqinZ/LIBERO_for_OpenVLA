@@ -12,12 +12,16 @@ libero_task_map = {
         "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate",
     ],
     "libero_object": [
+        "pick_up_the_tomato_sauce_and_place_it_in_the_basket",
+        "pick_up_the_cube_and_place_it_in_the_basket",
+        "pick_up_the_round_item_and_place_it_in_the_basket",
+        "pick_up_bouba_and_place_it_in_the_basket",
+        "pick_up_kiki_and_place_it_in_the_basket",
         "pick_up_the_alphabet_soup_and_place_it_in_the_basket",
         "pick_up_the_cream_cheese_and_place_it_in_the_basket",
         "pick_up_the_salad_dressing_and_place_it_in_the_basket",
         "pick_up_the_bbq_sauce_and_place_it_in_the_basket",
         "pick_up_the_ketchup_and_place_it_in_the_basket",
-        "pick_up_the_tomato_sauce_and_place_it_in_the_basket",
         "pick_up_the_butter_and_place_it_in_the_basket",
         "pick_up_the_milk_and_place_it_in_the_basket",
         "pick_up_the_chocolate_pudding_and_place_it_in_the_basket",
@@ -138,5 +142,5 @@ libero_task_map = {
         "STUDY_SCENE4_pick_up_the_book_on_the_left_and_place_it_on_top_of_the_shelf",
         "STUDY_SCENE4_pick_up_the_book_on_the_right_and_place_it_on_the_cabinet_shelf",
         "STUDY_SCENE4_pick_up_the_book_on_the_right_and_place_it_under_the_cabinet_shelf",
-    ],
+    ]
 }

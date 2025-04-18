@@ -102,6 +102,25 @@ def main():
     bddl_file_names, failures = generate_bddl_from_task_info()
     print(bddl_file_names)
 
+    with open(bddl_file_names[0], "r") as f:
+        print(f.read())
+
+    from libero.libero.envs import OffScreenRenderEnv
+    from IPython.display import display
+    from PIL import Image
+
+    import torch
+    import torchvision
+
+    env_args = {
+        "bddl_file_name": bddl_file_names[0],
+        "camera_heights": 256,
+        "camera_widths": 256
+    }
+
+    env = OffScreenRenderEnv(**env_args)
+    obs = env.reset()
+    display(Image.fromarray(obs["agentview_image"][::-1]))
 
 if __name__ == "__main__":
     main()
